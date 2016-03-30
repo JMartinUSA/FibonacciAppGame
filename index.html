@@ -1,0 +1,185 @@
+<!doctype html>
+
+<html>
+
+  <head>
+    <title>Current</title>
+    <!-- All Stylesheets-->
+    <link href="index.css" rel="stylesheet" />
+    <link href="clock.css" rel="stylesheet" />
+    <link href="about.css" rel="stylesheet" />
+    <link href="howTo.css" rel="stylesheet" />
+    <link href="allPages.css" rel="stylesheet" />
+    <link href="clockGame.css" rel="stylesheet" />
+    <link href="popout.css" rel="stylesheet" />
+  </head>
+
+  <body>
+
+    <!-- Index Container-->
+    <div class='container' id="containerIndex">
+      <div class="topBorderIndex"></div>
+
+      <div class="thumbnailIndex"> <img src="fibonacci clock 400px.png" /></div>
+      <div class="buttonIndex" onclick="showAllPages('Clock'), clockOnClock()"> <p>Clock</p> </div>
+      <div class="buttonIndex" onclick="nextLevelGame(), showAllPages('Game')"> <p>Game</p> </div>
+      <div class="buttonIndex" onclick="showAllPages('HowTo')"> <p>How To</p> </div>
+      <div class="buttonIndex" onclick="showAllPages('About')"> <p>About</p> </div>
+
+      <div class="topBorderIndex"></div>
+    </div>
+
+    <!-- Clock Container-->
+    <div class="container" id="containerClock">
+
+      <div class="topBorderClock"></div>
+
+        <div class="clockClock">
+          <div id="threeClock"></div>
+
+          <div class="onetwoClock">
+            <div id="twoClock"></div>
+            <div id="oneClock"></div>
+            <div id="one2Clock"></div>
+            </div>
+
+            <div id="fiveClock"></div>
+        </div>
+
+        <div class="bottomBorderClock"></div>
+    </div>
+
+    <!-- About Container-->
+    <div class="container" id="containerAbout">
+      <div class="topBorderAbout"></div>
+      <div class="backAbout buttonAbout" onclick="showAllPages('Index')">Back</div>
+      <div class="contentAbout">
+        &nbsp&nbsp&nbspHi, I'm Jesse Martin, I read about the idea for this clock online. I thought the idea behind it was really cool, I'm a big fan of simple looks and this clock is just about as simple as it gets. It may not be the most practical way to tell time, but as soon as i read the article, I knew I had to try to make one myself. I've really enjoyed working on this project and I feel like I've learned a lot about how webpages and apps work.<br><br>
+
+        &nbsp&nbsp&nbspAnyway, I hope you enjoy playing around with this app, maybe show it around to your friends (it is kind of a cool conversation starter in my opinion). If you ever see, or think of a cool idea/concept like this I definitely recommend you pursue it, you WILL learn something and you WILL have fun (albeit not without some frustration, this is a part of life). <br><br>
+
+        &nbsp&nbsp&nbspIf you enjoy this app you can shoot me an e-mail at Jesse@JayMartMedia.com, I'd really appreciate it.<br><br>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp-Jesse Martin
+      </div>
+
+
+      <div class="bottomBorderAbout"></div>
+    </div>
+
+    <!--HowTo Container-->   
+    <div class="container" id="containerHowTo">
+
+      <div class="topBorderHowTo"></div>
+      <div class="buttonHowTo" onclick="showAllPages('Index')">Home</div>
+      <div class="dividerHowTo"></div>
+
+
+      <div class="bottomBorderHowTo"></div>
+      <div class="backHowTo buttonHowTo" onclick="minusOneHowTo(); change_cssHowTo();"><p>Back</p></div>
+      <div class="nextHowTo buttonHowTo" onclick="addOneHowTo(); change_cssHowTo();"><p>Next</p></div>
+    </div>
+   
+   <!--Game Container-->
+    <div class="container" id='containerGame'>
+      <div id="transparentCoverGame"></div>
+      <div id="correctGame" class="popoutGame">
+        <div class="popoutTextGame">
+          Good Job!!<br>You have answered<br><div class="inlinePopoutGame" id="inARowGame"></div> in a <br> row correct!<br>You have<br><div id="percentCorrectGame"></div> accuracy!
+        </div>
+        <div class="buttonGame statButtonGame" onclick="showStatsGame()">Stats</div>
+        <div class="buttonGame nextButtonGame" onclick="nextLevelGame()">Continue</div>
+      </div>
+
+      <div id="incorrectGame" class="popoutGame">
+        <div class="popoutTextGame">
+          Incorrect<br>Ohh, nice try!!<br>Your record is<br><div class="inlinePopoutGame" id="recordInARowGame"></div> in a<br> row correct!<br> Your accuracy is <div id="percentIncorrectGame" ></div>
+        </div>
+        <div class="buttonGame nextButtonGame" onclick="nextLevelGame()">Continue</div>
+        <div class="buttonGame statButtonGame" onclick="showStatsGame()">Stats</div>
+      </div>
+
+      <div class='popoutGame' id="statsGame">
+        <div class="popoutTextGame" id"statsPopoutTextGame">
+          Total correct: <div class="inlinePopoutGame" id="totalCorrectStatsGame"></div><br>
+          Total incorrect: <div class="inlinePopoutGame" id="totalIncorrectStatsGame"></div><br>          Accuracy: <div class="inlinePopoutGame" id="totalAccuracyStatsGame"></div><br>
+          Record in a row: <div class="inlinePopoutGame" id="totalRecordInARowStatsGame"></div><br>
+          <br>
+          This Session
+          <br>
+          Correct: <div class="inlinePopoutGame" id="correctStatsGame"></div><br>
+          Incorrect: <div class="inlinePopoutGame" id="incorrectStatsGame"></div><br>
+          Accuracy: <div class="inlinePopoutGame" id="accuracyStatsGame"></div><br>
+          Record in a row: <div class="inlinePopoutGame" id="recordInARowStatsGame"></div><br>
+
+
+        </div>
+        <div class='buttonGame' onclick="backStatsGame()">Back</div>
+      </div>
+
+
+
+      <div class="topBorderGame"></div>
+
+        <div class="clockGame">
+          <div id="showStatsGame" onclick="showStatsGame()">Stats</div>
+          <div id="submitGame" onclick="submitGame()">Confirm</div>
+          <div id="threeGame"></div>
+
+          <div class="onetwoGame">
+            <div id="twoGame"></div>
+            <div id="oneGame"></div>
+            <div id="one2Game"></div>
+          </div>
+
+          <div id="fiveGame"></div>
+        </div>
+
+        <div class="bottomBorderGame"></div>
+        <div id="rightButtonsGame">
+            <div class="rightButtonGame" id="rightGame0" onclick="clearHoursGame(), highlightHourGame(this, 1);">1</div>
+            <div class="rightButtonGame" id="rightGame1" onclick="clearHoursGame(), highlightHourGame(this,2);">2</div>
+            <div class="rightButtonGame" id="rightGame2" onclick="clearHoursGame(), highlightHourGame(this,3);">3</div>
+            <div class="rightButtonGame" id="rightGame3" onclick="clearHoursGame(), highlightHourGame(this,4);">4</div>
+            <div class="rightButtonGame" id="rightGame4" onclick="clearHoursGame(), highlightHourGame(this,5);">5</div>
+            <div class="rightButtonGame" id="rightGame5" onclick="clearHoursGame(), highlightHourGame(this,6);">6</div>
+            <div class="rightButtonGame" id="rightGame6" onclick="clearHoursGame(), highlightHourGame(this,7);">7</div>
+            <div class="rightButtonGame" id="rightGame7" onclick="clearHoursGame(), highlightHourGame(this,8);">8</div>
+            <div class="rightButtonGame" id="rightGame8" onclick="clearHoursGame(), highlightHourGame(this,9);">9</div>
+            <div class="rightButtonGame" id="rightGame9" onclick="clearHoursGame(), highlightHourGame(this,10);">10</div>
+            <div class="rightButtonGame" id="rightGame10" onclick="clearHoursGame(), highlightHourGame(this,11);">11</div>
+            <div class="rightButtonGame" id="rightGame11" onclick="clearHoursGame(), highlightHourGame(this,12);">12</div>
+        </div>
+        <div id="bottomButtonsGame">
+            
+            <div class="bottomButtonGame" id="bottomGame1" onclick="clearMinutesGame(), highlightMinuteGame(this, 05);">05</div>
+            <div class="bottomButtonGame" id="bottomGame2" onclick="clearMinutesGame(), highlightMinuteGame(this,10);">10</div>
+            <div class="bottomButtonGame" id="bottomGame3" onclick="clearMinutesGame(), highlightMinuteGame(this,15);">15</div>
+            <div class="bottomButtonGame" id="bottomGame4" onclick="clearMinutesGame(), highlightMinuteGame(this,20);">20</div>
+            <div class="bottomButtonGame" id="bottomGame5" onclick="clearMinutesGame(), highlightMinuteGame(this,25);">25</div>
+            <div class="bottomButtonGame" id="bottomGame6" onclick="clearMinutesGame(), highlightMinuteGame(this,30);">30</div>
+            <div class="bottomButtonGame" id="bottomGame7" onclick="clearMinutesGame(), highlightMinuteGame(this,35);">35</div>
+            <div class="bottomButtonGame" id="bottomGame8" onclick="clearMinutesGame(), highlightMinuteGame(this,40);">40</div>
+            <div class="bottomButtonGame" id="bottomGame9" onclick="clearMinutesGame(), highlightMinuteGame(this,45);">45</div>
+            <div class="bottomButtonGame" id="bottomGame10" onclick="clearMinutesGame(), highlightMinuteGame(this,50);">50</div>
+            <div class="bottomButtonGame" id="bottomGame11" onclick="clearMinutesGame(), highlightMinuteGame(this,55);">55</div>
+            <div class="bottomButtonGame" id="bottomGame0" onclick="clearMinutesGame(), highlightMinuteGame(this, 00);">00</div>
+        </div>
+    </div>
+
+
+
+
+
+    <!--All Scripts-->
+    <SCRIPT src="clock.js"></SCRIPT> 
+    <SCRIPT src="howTo.js"></SCRIPT> 
+    <SCRIPT src="allPages.js"></SCRIPT> 
+    <SCRIPT src="clockGame.js"></SCRIPT> 
+    <SCRIPT src="game.js"></SCRIPT> 
+    <SCRIPT src="popout.js"></SCRIPT>
+    <SCRIPT src="stats.js"></SCRIPT> 
+
+
+  </body>
+
+</html>
